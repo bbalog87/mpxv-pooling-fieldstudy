@@ -34,7 +34,7 @@ All steps are portable and designed for use in field or low-resource settings.
 
 ---
 
-## 📊 Highlights
+## Highlights
 
 - MPXV enrichment remains robust in pools ≤6
 - Larger pools reduce coverage, variant yield, and assembly completeness
@@ -43,24 +43,4 @@ All steps are portable and designed for use in field or low-resource settings.
 
 ---
 
-## 📜 Citation
-
-If you use this code or data, please cite:
-
-> *[Author list]. Evaluating High-Plex Sample Pooling for the Illumina Viral Surveillance Panel v2 in Mpox Virus Genomic Detection under Field and Resource-Constrained Conditions. [Journal/preprint link]*
-
----
-
-## 📬 Contact
-
-For questions, collaborations, or reproducibility issues, contact:  
-**Julien A. Nguinkal**  
-[Your Institution]  
-[Your Email]
-
----
-
-## 🧾 License
-
-This project is released under the MIT License. See `LICENSE` for details.
 

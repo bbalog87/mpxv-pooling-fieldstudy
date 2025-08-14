@@ -21,7 +21,7 @@ It includes bioinformatics workflows, scripts, metadata, and processed results f
 
 ---
 
-## 🔬 Methods Overview
+##  Methods Overview
 
 - **Preprocessing**: FastP v0.20.1 for quality filtering
 - **Host Depletion**: Kraken2, SeqKit filtering

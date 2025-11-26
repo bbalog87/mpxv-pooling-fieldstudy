@@ -50,17 +50,7 @@ ggplot(qc_long, aes(x = RunLabel, y = Percentage, fill = Quality)) +
 
 
 
-
-
-
-
-
-
-# Load libraries
-library(ggplot2)
-library(dplyr)
-library(tidyr)
-
+########################################################
 # Create data frame
 qc_df <- data.frame(
   Run = factor(c("RUN-1", "RUN-2", "RUN-3", "RUN-4"), levels = c("RUN-1", "RUN-2", "RUN-3", "RUN-4")),

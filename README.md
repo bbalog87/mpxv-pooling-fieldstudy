@@ -47,7 +47,7 @@ This workflow processes Mpox VSP iSeq100 paired-end sequencing data across diffe
 
 ---
 
-## 2. ✂️ Adapter Trimming & Quality Filtering  
+## 2. Adapter Trimming & Quality Filtering  
 **Tool:** `fastp` (v0.23.4)
 
 **Key parameters:**  

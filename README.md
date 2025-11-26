@@ -45,7 +45,7 @@ This pipeline requires the following tools to be installed and accessible in you
 | [Kaiju](https://github.com/bioinformatics-centre/kaiju)    | Protein-level taxonomic classification                          | GitHub |
 | [fastp](https://github.com/OpenGene/fastp)                  | FASTQ preprocessor for quality trimming and filtering           | GitHub |
 | [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) | Read quality control                                      | Website |
-| [MultiQC](https://multiqc.info/docs/)                      | Aggregates QC reports into a single summary                     | Docs |
+| [MultiQC](https://github.com/MultiQC/MultiQC)                      | Aggregates QC reports into a single summary                     | GitHub |
 | [BWA-MEM](http://bio-bwa.sourceforge.net/)                 | Short-read alignment to reference genome                        | Website |
 | [SAMtools](http://www.htslib.org/)                         | Manipulation of SAM/BAM files                                   | Website |
 | [iVar](https://andersen-lab.github.io/ivar/html/)          | Primer trimming and variant calling for viral genomes           | Docs |

@@ -33,17 +33,6 @@ This workflow processes Mpox VSP iSeq100 paired-end sequencing data across diffe
 - **Assembly**: SPAdes v3.15, QUAST
 - **Taxonomic Classification**: KrakenUniq, Kaiju, Centrifuge
 
-All steps are portable and designed for use in field or low-resource settings.
-
----
-
-# 🧬 Bioinformatics Workflow Overview  
-**Evaluation of Pooling Strategies for Mpox VSP Sequencing on Illumina iSeq100**
-
-This workflow processes Mpox Viral Surveillance Panel (VSP) iSeq100 reads generated under different pooling levels (3, 6, 9 and 15 samples). The aim is to compare depth, genome completeness, and variant detection performance across pooling strategies to assess feasibility and cost‑efficiency in low‑resource or outbreak response settings.
-
-All tools and versions are explicitly documented for reproducibility.
-
 ---
 
 ## 1. 🔍 Raw Read Quality Control  

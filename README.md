@@ -60,14 +60,14 @@ This workflow processes Mpox VSP iSeq100 paired-end sequencing data across diffe
 
 ---
 
-## 3. 🔁 Post-trimming QC  
+## 3. Post-trimming QC  
 **Tool:** `FastQC` (on trimmed FASTQs)
 
 **Purpose:** Confirm improvement after trimming and detect any remaining quality issues.
 
 ---
 
-## 4. 📊 Consolidated QC Summary  
+## 4. Consolidated QC Summary  
 **Tool:** `MultiQC`  
 **Setting:** `TZ=UTC` to avoid timestamp errors  
 
@@ -96,7 +96,7 @@ This workflow processes Mpox VSP iSeq100 paired-end sequencing data across diffe
 
 ---
 
-## 6. 🧭 Alignment to Mpox Reference Genome  
+## 6.  Alignment to Mpox Reference Genome  
 **Tool:** `BWA-MEM2` (v2.2.1)  
 **Reference:** MPXV Clade Ia (e.g., NC_003310.1)
 
@@ -111,7 +111,7 @@ This workflow processes Mpox VSP iSeq100 paired-end sequencing data across diffe
 
 ---
 
-## 7. 📏 Genome Coverage Estimation  
+## 7. Genome Coverage Estimation  
 **Tool:** `samtools depth`
 
 **Purpose:**  
@@ -159,7 +159,7 @@ This workflow processes Mpox VSP iSeq100 paired-end sequencing data across diffe
 
 ---
 
-## 11. 📂 Output Directory Structure  
+## 11. Output Directory Structure  
 
 ```
 results/
@@ -183,13 +183,12 @@ results/
 
 ---
 
-## 12. 🧪 Interpretation & Use Case  
+## 12. Interpretation & Use Case  
 This workflow supports:  
 - Evaluating depth loss at increasing pooling levels  
 - Assessing variant detection sensitivity  
 - Quantifying completeness of consensus genomes  
 - Supporting public health decisions on cost-efficient genomic surveillance  
-- Reproducible benchmarking of sequencing strategies for field and mobile-lab settings
 
 
 ## Highlights

@@ -32,14 +32,47 @@ This workflow processes Mpox VSP iSeq100 paired-end sequencing data across diffe
 - **Variant Calling**: iVar, bcftools
 - **Assembly**: SPAdes v3.15, QUAST
 - **Taxonomic Classification**: KrakenUniq, Kaiju, Centrifuge
+## 🧰 Required Tools
 
+This pipeline requires the following tools to be installed and accessible in your environment. You can install them manually or via a Conda environment (see instructions below).
+
+| Tool           | Description                                                  | Installation / Docs |
+|----------------|--------------------------------------------------------------|----------------------|
+| [Kraken2](https://github.com/DerrickWood/kraken2)         | Taxonomic classification of metagenomic reads                    | GitHub |
+| [Krakenuniq](https://github.com/fbreitwieser/krakenuniq)   | Unique k-mer counting for abundance estimation                  | GitHub |
+| [Bracken](https://github.com/jenniferlu717/Bracken)        | Abundance estimation based on Kraken2 output                    | GitHub |
+| [Centrifuge](https://github.com/DaehwanKimLab/centrifuge)  | Classifier for metagenomics using FM-index                      | GitHub |
+| [Kaiju](https://github.com/bioinformatics-centre/kaiju)    | Protein-level taxonomic classification                          | GitHub |
+| [fastp](https://github.com/OpenGene/fastp)                  | FASTQ preprocessor for quality trimming and filtering           | GitHub |
+| [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) | Read quality control                                      | Website |
+| [MultiQC](https://multiqc.info/docs/)                      | Aggregates QC reports into a single summary                     | Docs |
+| [BWA-MEM](http://bio-bwa.sourceforge.net/)                 | Short-read alignment to reference genome                        | Website |
+| [SAMtools](http://www.htslib.org/)                         | Manipulation of SAM/BAM files                                   | Website |
+| [iVar](https://andersen-lab.github.io/ivar/html/)          | Primer trimming and variant calling for viral genomes           | Docs |
+| [SPAdes](https://cab.spbu.ru/software/spades/)             | Genome assembler for short reads                                | Website |
+| [QUAST](https://github.com/ablab/quast)                    | Assembly quality evaluation                                     | GitHub |
+| [seqtk](https://github.com/lh3/seqtk)                      | Lightweight toolkit for FASTA/Q processing                      | GitHub |
+| [seqkit](https://bioinf.shenwei.me/seqkit/)                | FASTA/Q manipulation toolkit                                    | Website |
+
+## 📦 Conda Environment (Optional)
+
+You can create a reproducible environment using the provided YAML file:
+
+```bash
+conda env create -f envs/mpx_pooling.yml
+conda activate mpx_pooling
+
+```
 ---
 ## 0. Create Conda Environment from Provided ```.yml```
 ```
 # Create the environment (includes fastp, samtools, seqtk, etc.)
-conda env create -f envs/mpx_pooling.yml
+mamba env create -f envs/mpx_pooling.yml
 conda activate mpx_pooling
 ```
+You need to manually install the following tools & reference databases:
+### Kraken2
+  
 
 ## 1. 🔍 Raw Read Quality Control  
 **Tool:** `FastQC` (v0.11.9)  

@@ -2,8 +2,7 @@
 
 This repository supports the manuscript:
 
-**“Evaluating High-Plex Sample Pooling for the Illumina Viral Surveillance Panel v2 in Mpox Virus Genomic Detection under Field and Resource-Constrained Conditions”**
-
+**“Evaluating High-Plex Sample Pooling for the Illumina Viral Surveillance Panel v2 in Mpox Virus Genomic Detection under Resource-Constrained Conditions”**
 It includes bioinformatics workflows, scripts, metadata, and processed results from an evaluation of sample multiplexing strategies during the 2024 Mpox outbreak in Burundi. The study compares sequencing performance across different pooling levels (3, 6, 9, and 15 samples per capture) using the Illumina VSP2 panel and iSeq 100 platform.
 
 ---
@@ -20,6 +19,10 @@ It includes bioinformatics workflows, scripts, metadata, and processed results f
 | `LICENSE`           | Licensing information (MIT by default)                                      |
 
 ---
+
+## Bioinformatics Workflow Overview
+
+This workflow processes Mpox VSP iSeq100 paired-end sequencing data across different pooling levels (3, 6, 9, and 15 samples per run). The aim is to evaluate the feasibility of cost-efficient genomic surveillance in low-resource contexts by analyzing genome coverage, variant detection, and consensus sequence generation.
 
 ##  Methods Overview
 

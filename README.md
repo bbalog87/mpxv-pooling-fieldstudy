@@ -34,6 +34,12 @@ This workflow processes Mpox VSP iSeq100 paired-end sequencing data across diffe
 - **Taxonomic Classification**: KrakenUniq, Kaiju, Centrifuge
 
 ---
+## 0. Create Conda Environment from Provided ```.yml```
+```
+# Create the environment (includes fastp, samtools, seqtk, etc.)
+conda env create -f envs/mpx_pooling.yml
+conda activate mpx_pooling
+```
 
 ## 1. 🔍 Raw Read Quality Control  
 **Tool:** `FastQC` (v0.11.9)  

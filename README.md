@@ -98,7 +98,7 @@ This workflow processes Mpox VSP iSeq100 paired-end sequencing data across diffe
 
 ## 6. 🧭 Alignment to Mpox Reference Genome  
 **Tool:** `BWA-MEM2` (v2.2.1)  
-**Reference:** MPXV Clade IIb (e.g., ON563414.3)
+**Reference:** MPXV Clade Ia (e.g., NC_003310.1)
 
 **Process:**  
 - Alignment (`bwa-mem2 mem`)  
@@ -121,15 +121,14 @@ This workflow processes Mpox VSP iSeq100 paired-end sequencing data across diffe
 
 ---
 
-## 8. 🧬 Variant Calling  
+## 8. Variant Calling  
 **Tools:**  
 - `samtools mpileup`  
 - `ivar variants` (v1.4.3)
 
 **Parameters:**  
 - MQ ≥ 20  
-- BQ ≥ 20  
-- Variant frequency ≥ 0.25  
+- BQ ≥ 20    
 - Minimum depth = 10  
 
 **Output:** `.tsv` variant tables
@@ -138,7 +137,7 @@ This workflow processes Mpox VSP iSeq100 paired-end sequencing data across diffe
 
 ---
 
-## 9. 🧬 Consensus Sequence Generation  
+## 9. Consensus Sequence Generation  
 **Tool:** `ivar consensus`
 
 **Parameters:**  
@@ -150,7 +149,7 @@ This workflow processes Mpox VSP iSeq100 paired-end sequencing data across diffe
 
 ---
 
-## 10. 📈 Variant Metrics & Summaries  
+## 10. Variant Metrics & Summaries  
 **Script:** `variant_summary.py`
 
 **Purpose:**  

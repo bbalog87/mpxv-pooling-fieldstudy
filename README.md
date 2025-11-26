@@ -3,6 +3,7 @@
 This repository supports the manuscript:
 
 **“Evaluating High-Plex Sample Pooling for the Illumina Viral Surveillance Panel v2 in Mpox Virus Genomic Detection under Resource-Constrained Conditions”**
+
 It includes bioinformatics workflows, scripts, metadata, and processed results from an evaluation of sample multiplexing strategies during the 2024 Mpox outbreak in Burundi. The study compares sequencing performance across different pooling levels (3, 6, 9, and 15 samples per capture) using the Illumina VSP2 panel and iSeq 100 platform.
 
 ---
@@ -46,7 +47,7 @@ This pipeline requires the following tools to be installed and accessible in you
 | [fastp](https://github.com/OpenGene/fastp)                  | FASTQ preprocessor for quality trimming and filtering           | GitHub |
 | [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) | Read quality control                                      | Website |
 | [MultiQC](https://github.com/MultiQC/MultiQC)                      | Aggregates QC reports into a single summary                     | GitHub |
-| [BWA-MEM](http://bio-bwa.sourceforge.net/)                 | Short-read alignment to reference genome                        | Website |
+| [BWA-MEM](https://github.com/bwa-mem2/bwa-mem2)                 | Short-read alignment to reference genome                        | Github|
 | [SAMtools](http://www.htslib.org/)                         | Manipulation of SAM/BAM files                                   | Website |
 | [iVar](https://andersen-lab.github.io/ivar/html/)          | Primer trimming and variant calling for viral genomes           | Docs |
 | [SPAdes](https://ablab.github.io/spades/)             | Genome assembler for short reads                                | Website |

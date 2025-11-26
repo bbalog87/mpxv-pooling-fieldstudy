@@ -49,20 +49,11 @@ This pipeline requires the following tools to be installed and accessible in you
 | [BWA-MEM](http://bio-bwa.sourceforge.net/)                 | Short-read alignment to reference genome                        | Website |
 | [SAMtools](http://www.htslib.org/)                         | Manipulation of SAM/BAM files                                   | Website |
 | [iVar](https://andersen-lab.github.io/ivar/html/)          | Primer trimming and variant calling for viral genomes           | Docs |
-| [SPAdes](https://cab.spbu.ru/software/spades/)             | Genome assembler for short reads                                | Website |
+| [SPAdes](https://ablab.github.io/spades/)             | Genome assembler for short reads                                | Website |
 | [QUAST](https://github.com/ablab/quast)                    | Assembly quality evaluation                                     | GitHub |
 | [seqtk](https://github.com/lh3/seqtk)                      | Lightweight toolkit for FASTA/Q processing                      | GitHub |
 | [seqkit](https://bioinf.shenwei.me/seqkit/)                | FASTA/Q manipulation toolkit                                    | Website |
 
-## 📦 Conda Environment (Optional)
-
-You can create a reproducible environment using the provided YAML file:
-
-```bash
-conda env create -f envs/mpx_pooling.yml
-conda activate mpx_pooling
-
-```
 ---
 ## 0. Create Conda Environment from Provided ```.yml```
 ```

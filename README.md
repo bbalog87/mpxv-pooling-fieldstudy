@@ -37,6 +37,173 @@ All steps are portable and designed for use in field or low-resource settings.
 
 ---
 
+# 🧬 Bioinformatics Workflow Overview  
+**Evaluation of Pooling Strategies for Mpox VSP Sequencing on Illumina iSeq100**
+
+This workflow processes Mpox Viral Surveillance Panel (VSP) iSeq100 reads generated under different pooling levels (3, 6, 9 and 15 samples). The aim is to compare depth, genome completeness, and variant detection performance across pooling strategies to assess feasibility and cost‑efficiency in low‑resource or outbreak response settings.
+
+All tools and versions are explicitly documented for reproducibility.
+
+---
+
+## 1. 🔍 Raw Read Quality Control  
+**Tool:** `FastQC` (v0.11.9)  
+**Input:** Raw paired-end FASTQ files  
+
+**Purpose:**  
+- Assess base quality distribution  
+- Detect adapter contamination  
+- Evaluate per-base sequence content  
+- Identify technical issues prior to trimming  
+
+---
+
+## 2. ✂️ Adapter Trimming & Quality Filtering  
+**Tool:** `fastp` (v0.23.4)
+
+**Key parameters:**  
+- Automatic adapter detection  
+- Sliding-window Q20 trimming  
+- Minimum length: 50 bp  
+- HTML + JSON QC reports
+
+**Purpose:** Improve read quality, remove adapters, and filter out very short or low-quality reads.
+
+---
+
+## 3. 🔁 Post-trimming QC  
+**Tool:** `FastQC` (on trimmed FASTQs)
+
+**Purpose:** Confirm improvement after trimming and detect any remaining quality issues.
+
+---
+
+## 4. 📊 Consolidated QC Summary  
+**Tool:** `MultiQC`  
+**Setting:** `TZ=UTC` to avoid timestamp errors  
+
+**Output:** One consolidated HTML report summarizing all FastQC and fastp metrics.
+
+---
+
+## 5.  Host-Read Removal  
+**Tools:**  
+- `Kraken2` (v2.1.2)  
+- `src_scrubber` (v0.4.0)  
+
+**Database:** Standard Kraken2 DB with human genome (GRCh38) and viral sequences  
+
+**Process:**  
+- Taxonomic classification with `kraken2`  
+  - `--paired` mode  
+  - `--confidence 0.1`  
+  - `--report` and `--classified-out` flags  
+- Host-read filtering using `src_scrubber`  
+  - Filters out reads classified as human or ambiguous taxa  
+  - Retains high-confidence viral reads  
+
+**Output:**  
+- Cleaned, host-depleted paired FASTQ files ready for downstream alignment  
+
+---
+
+## 6. 🧭 Alignment to Mpox Reference Genome  
+**Tool:** `BWA-MEM2` (v2.2.1)  
+**Reference:** MPXV Clade IIb (e.g., ON563414.3)
+
+**Process:**  
+- Alignment (`bwa-mem2 mem`)  
+- Conversion & sorting (`samtools view`, `samtools sort`)  
+- Indexing (`samtools index`)
+
+**Outputs:**  
+- Sorted BAM  
+- BAM index  
+
+---
+
+## 7. 📏 Genome Coverage Estimation  
+**Tool:** `samtools depth`
+
+**Purpose:**  
+- Compute average depth  
+- Identify low-coverage genome segments  
+- Generate depth profiles for comparing pooling levels  
+
+---
+
+## 8. 🧬 Variant Calling  
+**Tools:**  
+- `samtools mpileup`  
+- `ivar variants` (v1.4.3)
+
+**Parameters:**  
+- MQ ≥ 20  
+- BQ ≥ 20  
+- Variant frequency ≥ 0.25  
+- Minimum depth = 10  
+
+**Output:** `.tsv` variant tables
+
+**Purpose:** Detect SNPs and indels across pooling strategies.
+
+---
+
+## 9. 🧬 Consensus Sequence Generation  
+**Tool:** `ivar consensus`
+
+**Parameters:**  
+- Base frequency threshold: 0.60  
+- Depth cutoff: 10  
+- Mask low-depth bases as "N"
+
+**Output:** Consensus FASTA for each sample.
+
+---
+
+## 10. 📈 Variant Metrics & Summaries  
+**Script:** `variant_summary.py`
+
+**Purpose:**  
+- Compile variant counts per sample  
+- Distinguish high-confidence (QUAL ≥ 20) and very-high-confidence (QUAL ≥ 30) variants  
+- Compare variant retention across pooling levels
+
+---
+
+## 11. 📂 Output Directory Structure  
+
+```
+results/
+├── QC/
+│   ├── raw_fastqc/
+│   ├── trimmed_fastqc/
+│   └── multiqc_report.html
+├── trimmed_reads/
+├── alignments/
+│   ├── *.bam
+│   └── *.bai
+├── coverage/
+│   └── depth.txt
+├── variants/
+│   └── *.tsv
+├── consensus/
+│   └── *.fa
+├── summary/
+│   └── variant_metrics.tsv
+```
+
+---
+
+## 12. 🧪 Interpretation & Use Case  
+This workflow supports:  
+- Evaluating depth loss at increasing pooling levels  
+- Assessing variant detection sensitivity  
+- Quantifying completeness of consensus genomes  
+- Supporting public health decisions on cost-efficient genomic surveillance  
+- Reproducible benchmarking of sequencing strategies for field and mobile-lab settings
+
+
 ## Highlights
 
 - MPXV enrichment remains robust in pools ≤6
@@ -45,5 +212,8 @@ All steps are portable and designed for use in field or low-resource settings.
 - SPAdes assembly quality degrades significantly beyond 6-sample pools
 
 ---
+
+
+
 
 

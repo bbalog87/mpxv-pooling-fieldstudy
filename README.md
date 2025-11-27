@@ -17,7 +17,7 @@ It includes bioinformatics workflows, scripts, metadata, and processed results f
 | `results/`          | Processed outputs including variant metrics, assembly stats, and coverage   |
 | `figures/`          | Publication-ready plots (PNG and PDF formats)                               |
 | `MANUSCRIPT.md`     | Draft manuscript or link to final publication                               |
-| `LICENSE`           | Licensing information (MIT by default)                                      |
+
 
 ---
 

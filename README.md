@@ -33,6 +33,14 @@ This workflow processes Mpox VSP iSeq100 paired-end sequencing data across diffe
 - **Variant Calling**: iVar, bcftools
 - **Assembly**: SPAdes v3.15, QUAST
 - **Taxonomic Classification**: KrakenUniq, Kaiju, Centrifuge
+
+### Variant Calling Thresholds
+
+- Depth ≥10× for confident genome positions
+- QUAL ≥20 = high confidence
+- QUAL ≥30 = very high confidence
+- samtools mpileup: -Q 0 (retain all reads for downstream filtering)
+- iVar: minimum base quality filter Q20/Q30
 ## 🧰 Required Tools
 
 This pipeline requires the following tools to be installed and accessible in your environment. You can install them manually or via a Conda environment (see instructions below).

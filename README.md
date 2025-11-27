@@ -37,6 +37,21 @@ This workflow processes Mpox VSP iSeq100 paired-end sequencing data across diffe
 
 This pipeline requires the following tools to be installed and accessible in your environment. You can install them manually or via a Conda environment (see instructions below).
 
+### Software versions
+
+- fastp v0.23.4
+- Kraken2 v2.1.3
+- KrakenUniq v1.0.5
+- Centrifuge v1.0.4
+- BWA-MEM v0.7.17
+- samtools v1.19
+- iVar v1.4.3
+- bcftools v1.19
+- SPAdes v3.15.5
+- QUAST v5.2
+- Python 3.12,
+- R 4.5
+
 | Tool           | Description                                                  | Installation / Docs |
 |----------------|--------------------------------------------------------------|----------------------|
 | [Kraken2](https://github.com/DerrickWood/kraken2)         | Taxonomic classification of metagenomic reads                    | GitHub |

@@ -77,8 +77,6 @@ This pipeline requires the following tools to be installed and accessible in you
 mamba env create -f envs/mpx_pooling.yml
 conda activate mpx_pooling
 ```
-You need to manually install the following tools & reference databases:
-### Kraken2
   
 
 ## 1. 🔍 Raw Read Quality Control  

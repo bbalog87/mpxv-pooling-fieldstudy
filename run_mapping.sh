@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ###############################################################################
-# mpxv_qc_for_manuscript.sh  (single-end mapping with R1+R2 concatenated)
+# Single-end mapping with R1+R2 concatenated
 #
 # Outputs (per sample):
 #   sample

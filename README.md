@@ -8,7 +8,7 @@ It includes bioinformatics workflows, scripts, metadata, and processed results f
 
 ---
 
-## 📂 Repository Contents
+## 📂 Project tree Contents
 
 | Folder/File         | Description                                                                 |
 |---------------------|-----------------------------------------------------------------------------|

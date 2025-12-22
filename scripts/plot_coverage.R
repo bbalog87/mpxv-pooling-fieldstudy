@@ -324,7 +324,7 @@ ggsave("Figure_tax_classification_distribution.pdf",
 ###############################################################################
 # FULL VISUAL QC PIPELINE FOR MANUSCRIPT FIGURES
 # Author: Julien A. Nguinkal
-# Goal: Produce clean, professional plots for QC and variant metrics,
+# Goal: Produce clean plots for QC and variant metrics,
 #       grouped purely by Pool Size (3, 6, 9, 15).
 ###############################################################################
 

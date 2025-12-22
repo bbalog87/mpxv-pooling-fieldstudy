@@ -13,7 +13,7 @@ For each sample, the script:
   - calculates the transition/transversion (Ts/Tv) ratio for simple SNVs,
   - writes a tab-delimited summary table with one row per sample.
 
-This summary is intended for downstream QC plots and to compare variant
+This summary will be used for downstream QC plots and to compare variant
 quality across different pooling strategies or sequencing runs.
 """
 

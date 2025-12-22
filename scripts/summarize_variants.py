@@ -160,7 +160,7 @@ def main(input_dir, output_file):
 
 
 if __name__ == "__main__":
-    # Command-line interface so non-expert users can run the script easily.
+    # Command-line interface to run the script easily.
     parser = argparse.ArgumentParser(
         description=(
             "Summarise Mpox variant calling results from iVar TSV files. "

@@ -12,6 +12,7 @@ library(readr)
 library(dplyr)
 library(purrr)
 library(ggplot2)
+library(cowplot)
 
 ##----------------------------------------------------------
 ## 1. User settings
@@ -125,8 +126,6 @@ print(p1)
 
 
 p1+p2
-
-library(cowplot)
 
 # composite plot
 plot_grid(p1, p2,

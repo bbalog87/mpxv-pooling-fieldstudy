@@ -1,0 +1,41 @@
+name: mpxv_vsp
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  # Core
+  - python=3.10
+  - pip
+
+  # Read processing
+  - seqkit=2.6.1
+  - fastp=0.23.4
+
+  # Taxonomic classification
+  - kraken2=2.1.3
+  - krakenuniq=1.0.4
+  - bracken=2.8
+  - kaiju=1.9.2
+  - centrifuge=1.0.4_beta
+
+  # Alignment and BAM processing
+  - bwa=0.7.17
+  - samtools=1.19
+  - picard=3.1.1
+
+  # Variant calling and consensus
+  - ivar=1.4.2
+  - bcftools=1.19
+
+  # Assembly and QC
+  - spades=3.15.5
+  - quast=5.2.0
+  - assembly-stats=1.0.1
+
+  # Utilities
+  - parallel
+  - pigz
+  - coreutils
+

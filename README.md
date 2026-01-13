@@ -240,7 +240,7 @@ This workflow supports:
 - Evaluating depth loss at increasing pooling levels  
 - Assessing variant detection sensitivity  
 - Quantifying completeness of consensus genomes  
-- Supporting public health decisions on cost-efficient genomic surveillance  
+- Supporting public health decisions on cost-efficient Mpox genomic surveillance  
 
 
 ## Highlights
